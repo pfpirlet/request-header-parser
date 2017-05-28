@@ -15,6 +15,6 @@ app.get('/', function (req, res) {
 	res.send(response);
 })
 
-app.listen(port, '127.0.0.1', function () {
+app.listen(port, function () {
   console.log('App listening on port: ' + port)
 })
