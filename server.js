@@ -3,6 +3,8 @@ const app = express();
 const port = process.env.PORT || 8080;
 var response = {};
 
+app.enable('trust proxy');
+
 app.get('/', function (req, res) {
 	var ipaddress = req.ip;
 	var language = req.headers["accept-language"].split(",")[0];
@@ -13,6 +15,6 @@ app.get('/', function (req, res) {
 	res.send(response);
 })
 
-app.listen(port, function () {
+app.listen(port, '127.0.0.1', function () {
   console.log('App listening on port: ' + port)
 })
