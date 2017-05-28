@@ -4,7 +4,7 @@ const port = process.env.PORT || 8080;
 var response = {};
 
 app.get('/', function (req, res) {
-	var ipaddress = req.headers["X-Forwarded-For"];
+	var ipaddress = req.ip;
 	var language = req.headers["accept-language"].split(",")[0];
 	var software = /\(([^)]+)\)/.exec(req.headers["user-agent"])[1];
 	response["ipaddress"] = ipaddress;
